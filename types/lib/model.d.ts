@@ -799,7 +799,7 @@ export interface TruncateOptions extends Logging, Transactionable, Filterable, H
 /**
  * Options used for Model.destroy
  */
-export interface DestroyOptions extends TruncateOptions {
+export interface DestroyOptions extends TruncateOptions, SearchPathable {
   /**
    * If set to true, dialects that support it will use TRUNCATE instead of DELETE FROM. If a table is
    * truncated the where and limit options are ignored
