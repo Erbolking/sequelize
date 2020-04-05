@@ -506,7 +506,7 @@ type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
  *
  * A hash of options to describe the scope of the search
  */
-export interface FindOptions extends QueryOptions, Filterable, Projectable, Paranoid, IndexHintable {
+export interface FindOptions extends QueryOptions, Filterable, Projectable, Paranoid, IndexHintable, SearchPathable {
   /**
    * A list of associations to eagerly load using a left join (a single association is also supported). Supported is either
    * `{ include: Model1 }`, `{ include: [ Model1, Model2, ...]}`, `{ include: [{ model: Model1, as: 'Alias' }]}` or
@@ -950,7 +950,7 @@ export interface SetOptions {
 /**
  * Options used for Instance.save method
  */
-export interface SaveOptions extends Logging, Transactionable, Silent {
+export interface SaveOptions extends Logging, Transactionable, Silent, SearchPathable {
   /**
    * An optional array of strings, representing database columns. If fields is provided, only those columns
    * will be validated and saved.
